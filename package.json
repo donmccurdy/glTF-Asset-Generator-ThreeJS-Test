@@ -1,0 +1,18 @@
+{
+  "name": "gltf-asset-generator-threejs-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Don McCurdy <dm@donmccurdy.com>",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.92.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.0",
+    "budo": "^11.2.0"
+  }
+}
