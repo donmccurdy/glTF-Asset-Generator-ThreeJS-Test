@@ -47,7 +47,7 @@
 </head>
 <body>
     <header>
-        <h1>Preview glTF - three.js r90</h1>
+        <h1>Preview glTF - three.js r92</h1>
     </header>
     <main id="container">
 
@@ -78,8 +78,6 @@
 
     <script src="handlebars-v4.0.11.js"></script>
     <script src="bundle.js"></script>
-    <!-- <script src="https://cdn.rawgit.com/mrdoob/three.js/r90/build/three.js"></script> -->
-    <!-- <script src="https://cdn.rawgit.com/mrdoob/three.js/r90/examples/js/loaders/GLTFLoader.js"></script> -->
     <script>
 /* global Handlebars */
 
@@ -98,10 +96,12 @@ renderer.setSize( SIZE, SIZE );
 
 const loader = new THREE.GLTFLoader();
 
+const PATH = 'https://cdn.rawgit.com/bghgary/glTF-Asset-Generator/1904e15c';
+
 let envMap;
 let bgTexture;
 
-fetch( '../../Output/Manifest.json' )
+fetch( `${PATH}/Output/Manifest.json` )
     .then( ( response ) => response.json() )
     .then( ( folders ) => {
 
@@ -168,10 +168,10 @@ function renderFileContainer (el) {
     const id = el.dataset.id;
     const folder = el.dataset.folder;
     const model = models[ id ];
-    const path = `../../Output/${folder}/${model.fileName}`;
+    const path = `${PATH}/Output/${folder}/${model.fileName}`;
 
     const sampleImg = document.createElement('img');
-    sampleImg.src = `../../Output/${folder}/${model.sampleImageName}`;
+    sampleImg.src = `${PATH}/Output/${folder}/${model.sampleImageName}`;
     sampleImg.classList.add('file-sample-img');
     el.appendChild(sampleImg);
 
